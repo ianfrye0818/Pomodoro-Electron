@@ -1,0 +1,14 @@
+dist/
+release/
+dist-electron/
+node_modules/
+.env
+.env.local
+.vscode/
+.cursor/
+.claude/
+.github/
+*.backup
+.DS_Store
+package-lock.json
+tsconfig.tsbuildinfo

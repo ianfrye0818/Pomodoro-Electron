@@ -1,0 +1,88 @@
+{
+  "name": "pomodoro-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:web": "cross-env VITE_SKIP_ELECTRON=true vite",
+    "dev:electron": "vite",
+    "build": "tsc && vite build --config vite.config.ts",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:win": "npm run build && electron-builder --win",
+    "build:linux": "npm run build && electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps",
+    "preview": "vite preview",
+    "preview:electron": "electron-vite preview",
+    "lint": "npx eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.2",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "electron": "^39.2.7",
+    "electron-builder": "^26.4.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6"
+  },
+  "dependencies": {
+    "url": "^0.11.4"
+  },
+  "build": {
+    "appId": "com.pomodoro.electron",
+    "productName": "Pomodoro",
+    "files": [
+      "dist-electron/**/*",
+      "public/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "icon": "public/logo_larger.icns",
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "public/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "public/logo_larger.png",
+      "category": "Utility",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}
