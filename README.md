@@ -4,7 +4,7 @@ A cross-platform desktop application for the Pomodoro productivity timer, built 
 
 ## Overview
 
-This Electron wrapper provides a native desktop experience for the Pomodoro web application, with features like window state persistence, native icons, and system tray integration.
+This Electron wrapper provides a native desktop experience for the Pomodoro web application at [https://pomodoro.ianfrye.dev](https://pomodoro.ianfrye.dev), with features like window state persistence, native icons, and system tray integration.
 
 ## Features
 
